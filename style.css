@@ -1,16 +1,30 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
     color: #333;
-    background-color: #f9f9f9;
+    text-align: center;
 }
 
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */
 header {
     background: #222;
     color: white;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
 }
 
 nav ul {
@@ -26,16 +40,77 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 1.1rem;
 }
 
+/* Hero Section */
+#hero {
+    background: linear-gradient(135deg, #007BFF, #00C6A7);
+    color: white;
+    padding: 100px 0;
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: white;
+    color: #007BFF;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ddd;
+}
+
+/* Sections */
 section {
-    padding: 40px;
-    text-align: center;
+    padding: 60px 0;
 }
 
-footer {
-    text-align: center;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Projects */
+.project-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project {
+    background: white;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+/* Contact */
+#contact a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
     background: #222;
     color: white;
+    padding: 20px 0;
+    margin-top: 40px;
 }
