@@ -1,125 +1,93 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    text-align: center;
-    background: #f4f4f4;
+/* Minimal reset corresponding to the source site's Tailwind preflight. */
+*, ::before, ::after { box-sizing: border-box; border: 0 solid; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; tab-size: 4; line-height: 1.5; -webkit-tap-highlight-color: transparent; }
+h1, h2 { font-size: inherit; font-weight: inherit; }
+a { color: inherit; text-decoration: inherit; }
+b, strong { font-weight: bolder; }
+ol, ul { list-style: none; }
+/* Portfolio styles preserved from andyslee.lovable.app, November 16, 2026. */
+:root{--bg:#fdfdfb;
+--fg:#1b1b1a;
+--muted:#6b6a66;
+--link:#1c3fbf;
+--visited:#6a2c8f;
+--rule:#d9d8d2;
+--serif:"Source Serif 4",Charter,"Iowan Old Style",Georgia,serif;
+--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17171a;
+--fg:#e8e6e1;
+--muted:#9a978f;
+--link:#8fa8ff;
+--visited:#c39bff;
+--rule:#34343a;
+--lightningcss-light: ;
+--lightningcss-dark:initial;
+--lightningcss-light: ;
+--lightningcss-dark:initial;
+color-scheme:dark}
 }
-
-/* Header */
-header {
-    background: rgba(34, 34, 34, 0.9);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
+:root[data-theme=dark]{--bg:#17171a;
+--fg:#e8e6e1;
+--muted:#9a978f;
+--link:#8fa8ff;
+--visited:#c39bff;
+--rule:#34343a;
+--lightningcss-light: ;
+--lightningcss-dark:initial;
+--lightningcss-light: ;
+--lightningcss-dark:initial;
+color-scheme:dark}
+body{background:var(--bg);
+color:var(--fg);
+font-family:var(--serif);
+padding-block:3rem 5rem;
+padding-left:max(16px,env(safe-area-inset-left,0px));
+padding-right:max(16px,env(safe-area-inset-right,0px));
+margin:0;
+font-size:1.125rem;
+line-height:1.6}
+main{max-width:36rem;
+margin:0 auto}
+h1{letter-spacing:-.01em;
+margin:0 0 .25rem;
+font-size:1.75rem;
+font-weight:600}
+h2{text-transform:lowercase;
+font-variant:small-caps;
+letter-spacing:.06em;
+color:var(--muted);
+margin:3rem 0 .75rem;
+font-size:1rem;
+font-weight:600}
+p{margin:0 0 1rem}
+a{color:var(--link);
+text-underline-offset:.15em}
+a:visited{color:var(--visited)}
+a:focus-visible{outline:2px solid var(--link);
+outline-offset:2px}
+.sub{color:var(--muted);
+margin:0 0 2rem}
+dl{margin:0}
+dt{margin-top:1.25rem;
+font-weight:600}
+dd{margin:.1rem 0 0}
+ul.cv{margin:0;
+padding:0;
+list-style:none}
+ul.cv li{border-top:1px solid var(--rule);
+grid-template-columns:6.5rem 1fr;
+gap:.25rem 1rem;
+padding:.6rem 0;
+display:grid}
+ul.cv li:last-child{border-bottom:1px solid var(--rule)}
+.yr{font-family:var(--mono);
+color:var(--muted);
+padding-top:.3rem;
+font-size:.8125rem}
+@media (width<=30rem){ul.cv li{grid-template-columns:1fr}
+.yr{padding-top:0}
 }
+footer{color:var(--muted);
+margin-top:3rem;
+font-size:.9375rem}
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-/* Hero Section with Background Image */
-#hero {
-    background: url('https://source.unsplash.com/1600x900/?nature,technology') no-repeat center center/cover;
-    color: white;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-#hero .container {
-    position: relative;
-    z-index: 1;
-}
-
-#hero h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-#hero p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-block;
-    background: white;
-    color: #007BFF;
-    padding: 12px 24px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #ddd;
-}
-
-/* Sections */
-section {
-    padding: 80px 0;
-    text-align: center;
-}
-
-.container {
-    width: 80%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-/* Projects */
-.project-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.project {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   
